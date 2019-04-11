@@ -1,6 +1,8 @@
 {
   "name": "@ianwalter/cli",
   "description": "A utility to help build command-line and package.json driven applications",
+  "version": "1.0.0",
+  "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js tests",
@@ -10,6 +12,25 @@
   "files": [
     "index.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianwalter/cli.git"
+  },
+  "keywords": [
+    "cli",
+    "command-line",
+    "command",
+    "line",
+    "args",
+    "flags",
+    "options",
+    "package.json",
+    "configuration"
+  ],
+  "bugs": {
+    "url": "https://github.com/ianwalter/cli/issues"
+  },
+  "homepage": "https://github.com/ianwalter/cli#readme",
   "dependencies": {
     "getopts": "^2.2.4",
     "pkg-conf": "^3.1.0",
