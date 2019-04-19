@@ -11,6 +11,6 @@ exports[`cli 1`] = `
 exports[`dot format 1`] = `
 "{ level: 'debug',
   concurrency: 2,
-  some: { other: { thing: 'b' } },
+  some: { thing: true, other: { thing: 'b' } },
   _: [] }"
 `;
