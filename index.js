@@ -1,5 +1,6 @@
 const pkgConf = require('pkg-conf')
 const getopts = require('getopts')
+const dotProp = require('dot-prop')
 
 module.exports = function cli ({ name, opts }) {
   // Create the configuration object that will be returned.
@@ -11,9 +12,24 @@ module.exports = function cli ({ name, opts }) {
     Object.assign(config, pkgConf.sync(name))
   }
 
+  //
+  let cliOpts = getopts(process.argv.slice(2), opts)
+
+  //
+  cliOpts = Object.entries(cliOpts).reduce(
+    (acc, [key, val]) => {
+      if (key.includes('.')) {
+        dotProp.set(acc, key, val)
+        delete acc[key]
+      }
+      return acc
+    },
+    cliOpts
+  )
+
   // Add/overwrite configuration data with options passed through command-line
   // flags.
-  Object.assign(config, getopts(process.argv.slice(2), opts))
+  Object.assign(config, cliOpts)
 
   // Return the populated configuration object.
   return config

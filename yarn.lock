@@ -119,10 +119,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@ianwalter/bff@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-3.0.0.tgz#16d55d6540ffa780a14fd63d8d93b65e92efbd42"
-  integrity sha512-9R58f2fqvVWCiqJn31hEbor6jJCCsbBGxtR/OKYZyn7MeZy/NOn04xVszZk/oVcqo5S0zZiEloO0LQfkp/iQaA==
+"@ianwalter/bff@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-3.0.1.tgz#c832e701b07acb19f187ae0b7732b41fb5a50bab"
+  integrity sha512-bCSo0HfjNEbhIaMXRswnlAR2rsmEz+Ks9XosgVAjlbCyBmgQLly354eOBHqc3lPQOIiByImbq1UX9DrllvyDdQ==
   dependencies:
     "@ianwalter/cli" "^1.0.0"
     "@ianwalter/print" "^2.3.0"
@@ -926,6 +926,13 @@ dot-prop@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
+  dependencies:
+    is-obj "^1.0.0"
+
+dot-prop@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.0.0.tgz#64b7968af349c3a9f966aa12658dbd5829f6b953"
+  integrity sha512-RTmaF2jx3nOBO2GvtFqjnDLycjFUMqt+2pwRx7JVYa81lDauoj9aNkyrJI2ikR58FbBIchiIlRiGG+muLJ4oHQ==
   dependencies:
     is-obj "^1.0.0"
 
