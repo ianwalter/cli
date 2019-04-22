@@ -126,12 +126,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@ianwalter/bff@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-3.0.1.tgz#c832e701b07acb19f187ae0b7732b41fb5a50bab"
-  integrity sha512-bCSo0HfjNEbhIaMXRswnlAR2rsmEz+Ks9XosgVAjlbCyBmgQLly354eOBHqc3lPQOIiByImbq1UX9DrllvyDdQ==
+"@ianwalter/bff@3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-3.1.1.tgz#71ae7a6ae37e49dfc154427f2d36c40e01885c97"
+  integrity sha512-iV1RHdJihhAA7F2Icd9A1Cyy4kxTyKlXarPsqASiCcfOqiHcAuW0n8U2kItMCsw+t35Ymx6NITu1IcbrdTu8HQ==
   dependencies:
-    "@ianwalter/cli" "^1.0.0"
+    "@ianwalter/cli" "^1.1.1"
     "@ianwalter/print" "^2.3.0"
     common-tags "^1.8.0"
     expect "^24.7.1"
@@ -141,11 +141,13 @@
     p-timeout "^3.1.0"
     workerpool "^3.1.2"
 
-"@ianwalter/cli@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/cli/-/cli-1.0.0.tgz#73d803468c11bde5afac4b5eedfc4ac33ae36f12"
-  integrity sha512-MDcYFW9Ksb2jHfQ/v2QJRsEp/5Raz9FxUx2GLGjLWuqfk1GwWOGxJ9As7tJAuE9stVbZa1o/Gi753QWb8PZzQw==
+"@ianwalter/cli@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/cli/-/cli-1.1.1.tgz#544ea8d0dbd207aaf867e01e861be908c161ae7d"
+  integrity sha512-N7cdoA2llrZDqifD09aqFuwS4iUlxDHea5Wn29TIyEcYHo3JHjwfkjKOdKSqa3t7/KZqod5OEOWd8dKDqc6HMA==
   dependencies:
+    "@ianwalter/merge" "^3.0.0"
+    dot-prop "^5.0.0"
     getopts "^2.2.4"
     pkg-conf "^3.1.0"
     yargs "^13.2.2"
