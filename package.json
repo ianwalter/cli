@@ -36,8 +36,7 @@
     "@ianwalter/merge": "^4.0.0",
     "dot-prop": "^5.0.0",
     "getopts": "^2.2.4",
-    "pkg-conf": "^3.1.0",
-    "yargs": "^13.2.2"
+    "pkg-conf": "^3.1.0"
   },
   "devDependencies": {
     "@ianwalter/bff": "4.0.2",

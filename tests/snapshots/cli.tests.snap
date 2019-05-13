@@ -1,16 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`cli 1`] = `
-"{ level: 'debug',
+"{
+  level: 'debug',
   concurrency: 4,
   some: { thing: true, other: { thing: 'a' } },
   _: [],
-  c: 4 }"
+  c: 4
+}"
 `;
 
 exports[`dot format 1`] = `
-"{ level: 'debug',
+"{
+  level: 'debug',
   concurrency: 2,
   some: { thing: true, other: { thing: 'b' } },
-  _: [] }"
+  _: []
+}"
 `;
