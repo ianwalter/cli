@@ -13,10 +13,10 @@ module.exports = function cli ({ name, opts }) {
     Object.assign(config, pkgConf.sync(name))
   }
 
-  //
+  // Collect any command-line arguments passed to the process.
   let cliOpts = getopts(process.argv.slice(2), opts)
 
-  //
+  // Reduce any command-line arguments containing dots into a nested structure.
   cliOpts = Object.entries(cliOpts).reduce(
     (acc, [key, val]) => {
       if (key.includes('.')) {
