@@ -134,7 +134,7 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@ianwalter/bff@6.0.1":
+"@ianwalter/bff@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.0.1.tgz#e175adb7efc78b4aeb5444779b586fe38e391992"
   integrity sha512-FwTZZweGOTa0loNv/th/Jz2UoUuoT71XeWYTbiP1nJjkX1imOdGhiAERjvGLkg7qTE24AcKrmRUZJmLrQMEKnQ==
