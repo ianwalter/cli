@@ -1,17 +1,15 @@
-const pkgConf = require('pkg-conf')
+const readPkgUp = require('read-pkg-up')
 const getopts = require('getopts')
 const dotProp = require('dot-prop')
 const merge = require('@ianwalter/merge')
 
 module.exports = function cli ({ name, opts }) {
-  // Create the configuration object that will be returned.
-  const config = {}
+  // Extract the curren't package's package.json so that it can be included in
+  // the returned config object.
+  const { package: $package } = readPkgUp.sync()
 
-  // If a name is specified, attempt to populate config with any data specified
-  // in the closest package.json with that name as the property key.
-  if (name) {
-    Object.assign(config, pkgConf.sync(name))
-  }
+  // Create the configuration object that will be returned to the CLI.
+  const config = { $package, ...($package[name] || {}) }
 
   // Collect any command-line arguments passed to the process.
   let cliOpts = getopts(process.argv.slice(2), opts)

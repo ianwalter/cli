@@ -7,4 +7,6 @@ const config = cli({
   opts: { alias: { concurrency: 'c' } }
 })
 
+config.$package = { name: config.$package.name }
+
 console.log(config)
