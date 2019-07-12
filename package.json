@@ -36,7 +36,7 @@
     "@ianwalter/merge": "^5.0.0",
     "dot-prop": "^5.1.0",
     "getopts": "^2.2.4",
-    "pkg-conf": "^3.1.0"
+    "read-pkg-up": "^6.0.0"
   },
   "devDependencies": {
     "@ianwalter/bff": "^6.3.1",
