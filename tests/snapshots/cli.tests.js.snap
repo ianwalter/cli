@@ -2,57 +2,7 @@
 
 exports[`cli 1`] = `
 "{
-  '$package': {
-    name: '@ianwalter/cli',
-    description: 'A utility to help build command-line ' +
-      'and package.json driven applications',
-    version: '1.1.1',
-    author: {
-      name: 'Ian Walter',
-      email: 'public@iankwalter.com',
-      url: 'https://iankwalter.com'
-    },
-    main: 'index.js',
-    scripts: {
-      lint: 'eslint index.js tests',
-      example: './tests/fixtures/exampleCli.js',
-      test: 'bff'
-    },
-    license: 'SEE LICENSE IN LICENSE',
-    files: [ 'index.js' ],
-    repository: { type: 'git', url: 'git+https://github.com/ianwalter/cli.git' },
-    keywords: [
-      'cli',
-      'command-line',
-      'command',
-      'line',
-      'args',
-      'flags',
-      'options',
-      'package.json',
-      'configuration'
-    ],
-    bugs: { url: 'https://github.com/ianwalter/cli/issues' },
-    homepage: 'https://github.com/ianwalter/cli#readme',
-    dependencies: {
-      '@ianwalter/merge': '^5.0.0',
-      'dot-prop': '^5.1.0',
-      getopts: '^2.2.4',
-      'read-pkg-up': '^6.0.0'
-    },
-    devDependencies: {
-      '@ianwalter/bff': '^6.3.1',
-      '@ianwalter/eslint-config': '^2.1.0',
-      '@ianwalter/renovate-config': '^1.1.1',
-      execa: '^2.0.3',
-      np: '^5.0.3'
-    },
-    exampleCli: { level: 'debug', concurrency: 2, some: [Object] },
-    eslintConfig: { root: true, extends: [Array] },
-    renovate: { extends: [Array] },
-    readme: 'ERROR: No README data found!',
-    _id: '@ianwalter/cli@1.1.1'
-  },
+  '$package': { name: '@ianwalter/cli' },
   level: 'debug',
   concurrency: 4,
   some: { thing: true, other: { thing: 'a' } },
@@ -63,57 +13,7 @@ exports[`cli 1`] = `
 
 exports[`dot format 1`] = `
 "{
-  '$package': {
-    name: '@ianwalter/cli',
-    description: 'A utility to help build command-line ' +
-      'and package.json driven applications',
-    version: '1.1.1',
-    author: {
-      name: 'Ian Walter',
-      email: 'public@iankwalter.com',
-      url: 'https://iankwalter.com'
-    },
-    main: 'index.js',
-    scripts: {
-      lint: 'eslint index.js tests',
-      example: './tests/fixtures/exampleCli.js',
-      test: 'bff'
-    },
-    license: 'SEE LICENSE IN LICENSE',
-    files: [ 'index.js' ],
-    repository: { type: 'git', url: 'git+https://github.com/ianwalter/cli.git' },
-    keywords: [
-      'cli',
-      'command-line',
-      'command',
-      'line',
-      'args',
-      'flags',
-      'options',
-      'package.json',
-      'configuration'
-    ],
-    bugs: { url: 'https://github.com/ianwalter/cli/issues' },
-    homepage: 'https://github.com/ianwalter/cli#readme',
-    dependencies: {
-      '@ianwalter/merge': '^5.0.0',
-      'dot-prop': '^5.1.0',
-      getopts: '^2.2.4',
-      'read-pkg-up': '^6.0.0'
-    },
-    devDependencies: {
-      '@ianwalter/bff': '^6.3.1',
-      '@ianwalter/eslint-config': '^2.1.0',
-      '@ianwalter/renovate-config': '^1.1.1',
-      execa: '^2.0.3',
-      np: '^5.0.3'
-    },
-    exampleCli: { level: 'debug', concurrency: 2, some: [Object] },
-    eslintConfig: { root: true, extends: [Array] },
-    renovate: { extends: [Array] },
-    readme: 'ERROR: No README data found!',
-    _id: '@ianwalter/cli@1.1.1'
-  },
+  '$package': { name: '@ianwalter/cli' },
   level: 'debug',
   concurrency: 2,
   some: { thing: true, other: { thing: 'b' } },
