@@ -43,7 +43,7 @@
     "@ianwalter/eslint-config": "^2.2.0",
     "@ianwalter/release": "^1.1.10",
     "@ianwalter/renovate-config": "^1.1.1",
-    "execa": "^2.0.3"
+    "execa": "^2.0.4"
   },
   "exampleCli": {
     "level": "debug",
