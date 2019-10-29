@@ -6,10 +6,10 @@ const merge = require('@ianwalter/merge')
 module.exports = function cli ({ name, opts }) {
   // Extract the curren't package's package.json so that it can be included in
   // the returned config object.
-  const { package: $package } = readPkgUp.sync()
+  const { packageJson } = readPkgUp.sync()
 
   // Create the configuration object that will be returned to the CLI.
-  const config = { $package, ...($package[name] || {}) }
+  const config = { packageJson, ...(packageJson[name] || {}) }
 
   // Collect any command-line arguments passed to the process.
   let cliOpts = getopts(process.argv.slice(2), opts)

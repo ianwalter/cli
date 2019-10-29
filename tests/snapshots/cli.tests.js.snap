@@ -2,7 +2,7 @@
 
 exports[`cli 1`] = `
 "{
-  '$package': { name: '@ianwalter/cli' },
+  packageJson: { name: '@ianwalter/cli' },
   level: 'debug',
   concurrency: 4,
   some: { thing: true, other: { thing: 'a' } },
@@ -13,7 +13,7 @@ exports[`cli 1`] = `
 
 exports[`dot format 1`] = `
 "{
-  '$package': { name: '@ianwalter/cli' },
+  packageJson: { name: '@ianwalter/cli' },
   level: 'debug',
   concurrency: 2,
   some: { thing: true, other: { thing: 'b' } },
