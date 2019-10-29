@@ -16,6 +16,6 @@ const config = cli({
   }
 })
 
-config.packageJson = { name: config.packageJson.name }
+config.packageJson = { name: config.packageJson && config.packageJson.name }
 
 console.log(config)
