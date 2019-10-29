@@ -26,7 +26,7 @@ const cli = require('@ianwalter/cli')
 
 const config = cli({
   name: 'equip',
-  option: {
+  options: {
     type: {
       alias: 't',
       description: `
