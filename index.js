@@ -3,7 +3,7 @@ const getopts = require('getopts')
 const dotProp = require('dot-prop')
 const merge = require('@ianwalter/merge')
 
-module.exports = function cli ({ name, options }) {
+module.exports = function cli ({ name, commands, options }) {
   // Extract the curren't package's package.json so that it can be included in
   // the returned config object.
   const { packageJson } = readPkgUp.sync() || {}
@@ -38,6 +38,11 @@ module.exports = function cli ({ name, options }) {
   // Add/overwrite configuration data with options passed through command-line
   // flags.
   merge(config, cliOpts)
+
+  // Set the command if one was configured and specified.
+  if (commands && commands.includes(config._[0])) {
+    config.command = config._.shift()
+  }
 
   // Return the populated configuration object.
   return config
