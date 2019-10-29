@@ -1,3 +1,4 @@
+const util = require('util')
 const readPkgUp = require('read-pkg-up')
 const getopts = require('getopts')
 const dotProp = require('dot-prop')
@@ -45,7 +46,7 @@ module.exports = function cli ({ name, description, usage, options }) {
     config.help = `# ${name}\n`
 
     if (description) {
-      config.help += `> ${description}\n\n`
+      config.help += `${description}\n\n`
     }
 
     if (usage) {
@@ -56,7 +57,9 @@ module.exports = function cli ({ name, description, usage, options }) {
       config.help += '## Options\n'
       config.help += Object.entries(options).reduce((acc, [key, option]) => {
         const alias = option.alias ? `, --${option.alias}` : ''
-        const def = option.default ? ` (Default: ${option.default})` : ''
+        const def = option.default !== undefined
+          ? ` (default: \`${util.inspect(option.default)}\`)`
+          : ''
         const description = oneLine(option.description)
         return acc + `* \`--${key}${alias}\`  ${description}${def}\n`
       }, '')
