@@ -67,11 +67,11 @@ Using the examples above, the resulting config would be:
 
 ## License
 
-Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
+Hippocratic License - See [LICENSE][licenseUrl]
 
 &nbsp;
 
-Created by [Ian Walter](https://iankwalter.com)
+Created by [Ian Walter](https://ianwalter.dev)
 
 [npmImage]: https://img.shields.io/npm/v/@ianwalter/cli.svg
 [npmUrl]: https://www.npmjs.com/package/@ianwalter/cli

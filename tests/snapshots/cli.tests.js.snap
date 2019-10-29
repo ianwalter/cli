@@ -17,6 +17,7 @@ exports[`dot format 1`] = `
   level: 'debug',
   concurrency: 2,
   some: { thing: true, other: { thing: 'b' } },
-  _: []
+  _: [],
+  c: 2
 }"
 `;
