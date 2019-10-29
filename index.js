@@ -2,8 +2,10 @@ const readPkgUp = require('read-pkg-up')
 const getopts = require('getopts')
 const dotProp = require('dot-prop')
 const merge = require('@ianwalter/merge')
+const { oneLine } = require('common-tags')
+const { md } = require('@ianwalter/print')
 
-module.exports = function cli ({ name, commands, options }) {
+module.exports = function cli ({ name, description, usage, options }) {
   // Extract the curren't package's package.json so that it can be included in
   // the returned config object.
   const { packageJson } = readPkgUp.sync() || {}
@@ -39,9 +41,29 @@ module.exports = function cli ({ name, commands, options }) {
   // flags.
   merge(config, cliOpts)
 
-  // Set the command if one was configured and specified.
-  if (commands && commands.includes(config._[0])) {
-    config.command = config._.shift()
+  if (config.help) {
+    config.help = `# ${name}\n`
+
+    if (description) {
+      config.help += `> ${description}\n\n`
+    }
+
+    if (usage) {
+      config.help += `## Usage\n${usage}\n\n`
+    }
+
+    if (options) {
+      config.help += '## Options\n'
+      config.help += Object.entries(options).reduce((acc, [key, option]) => {
+        const alias = option.alias ? `, --${option.alias}` : ''
+        const def = option.default ? ` (Default: ${option.default})` : ''
+        const description = oneLine(option.description)
+        return acc + `* \`--${key}${alias}\`  ${description}${def}\n`
+      }, '')
+    }
+
+    // Format the help markdown text with marked.
+    config.help = md(config.help) + '\n'
   }
 
   // Return the populated configuration object.
