@@ -16,6 +16,6 @@ const config = cli({
   }
 })
 
-config.$package = { name: config.$package.name }
+config.packageJson = { name: config.packageJson.name }
 
 console.log(config)
