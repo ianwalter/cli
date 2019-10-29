@@ -34,9 +34,11 @@
   "homepage": "https://github.com/ianwalter/cli#readme",
   "dependencies": {
     "@ianwalter/merge": "^5.0.0",
+    "@ianwalter/print": "^3.8.0",
+    "common-tags": "^1.8.0",
     "dot-prop": "^5.1.1",
     "getopts": "^2.2.5",
-    "read-pkg-up": "^6.0.0"
+    "read-pkg-up": "^7.0.0"
   },
   "devDependencies": {
     "@ianwalter/bff": "^7.0.0",
