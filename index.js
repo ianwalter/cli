@@ -16,12 +16,14 @@ module.exports = function cli ({ name, description, usage, options }) {
 
   // Convert cli config to getopts config.
   const opts = { alias: {}, default: {} }
-  Object.entries(options).forEach(([key, option]) => {
-    opts.alias[key] = option.alias
+  if (options) {
+    Object.entries(options).forEach(([key, option]) => {
+      opts.alias[key] = option.alias
 
-    // Default to package.json config or option config.
-    opts.default[key] = dotProp.get(config, key) || option.default
-  })
+      // Default to package.json config or option config.
+      opts.default[key] = dotProp.get(config, key) || option.default
+    })
+  }
 
   // Collect any command-line arguments passed to the process.
   let cliOpts = getopts(process.argv.slice(2), opts)
