@@ -36,7 +36,7 @@
     "@ianwalter/merge": "^5.0.0",
     "@ianwalter/print": "^3.8.0",
     "common-tags": "^1.8.0",
-    "dot-prop": "^5.1.1",
+    "dot-prop": "^5.2.0",
     "getopts": "^2.2.5",
     "read-pkg-up": "^7.0.0"
   },
