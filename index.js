@@ -22,6 +22,14 @@ module.exports = function cli ({ name, description, usage, options }) {
 
       // Default to package.json config or option config.
       opts.default[key] = dotProp.get(config, key) || option.default
+
+      // Specify the option type.
+      const type = option.type || typeof opts.default[key]
+      if (opts[type]) {
+        opts[type].push(key)
+      } else if (['string', 'boolean'].includes(type)) {
+        opts[type] = [key]
+      }
     })
   }
 
