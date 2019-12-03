@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cli 1`] = `
+"    
+     1 {
+     2   packageJson: {
+     3     name: '@ianwalter/cli'
+     4   },
+     5   level: 'debug',
+     6   concurrency: 4,
+     7   some: {
+     8     thing: true,
+     9     other: {
+    10       thing: 'a'
+    11     }
+    12   },
+    13   _: [],
+    14   c: 4,
+    15   path: '/some/path'
+    16 }
+    "
+`;
+
+exports[`dot format 1`] = `
+"    
+     1 {
+     2   packageJson: {
+     3     name: '@ianwalter/cli'
+     4   },
+     5   level: 'debug',
+     6   concurrency: 2,
+     7   some: {
+     8     thing: true,
+     9     other: {
+    10       thing: 'b'
+    11     }
+    12   },
+    13   _: [],
+    14   c: 2,
+    15   path: '/some/path'
+    16 }
+    "
+`;

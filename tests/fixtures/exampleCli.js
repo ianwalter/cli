@@ -15,14 +15,19 @@ const config = cli({
         must be an integer between 1 and 4
       `,
       default: 1
+    },
+    path: {
+      default: '/some/path'
     }
   }
 })
 
 config.packageJson = { name: config.packageJson && config.packageJson.name }
 
-if (config.help) {
-  print.info(config.help)
+if (module.parent) {
+  module.exports = config
+} else if (config.help) {
+  print.text(config.help)
 } else {
-  print.log(config)
+  print.text(config)
 }

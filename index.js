@@ -18,7 +18,9 @@ module.exports = function cli ({ name, description, usage, options }) {
   const opts = { alias: {}, default: {} }
   if (options) {
     Object.entries(options).forEach(([key, option]) => {
-      opts.alias[key] = option.alias
+      if  (option.alias) {
+        opts.alias[key] = option.alias
+      }
 
       // Default to package.json config or option config.
       opts.default[key] = dotProp.get(config, key) || option.default
