@@ -18,7 +18,7 @@ module.exports = function cli ({ name, description, usage, options }) {
   const opts = { alias: {}, default: {} }
   if (options) {
     Object.entries(options).forEach(([key, option]) => {
-      if  (option.alias) {
+      if (option.alias) {
         opts.alias[key] = option.alias
       }
 
