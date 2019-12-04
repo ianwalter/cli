@@ -6,7 +6,7 @@ const merge = require('@ianwalter/merge')
 const { oneLine } = require('common-tags')
 const { md } = require('@ianwalter/print')
 
-module.exports = function cli ({ name, description, usage, options }) {
+module.exports = function cli ({ name, description, usage, options, help }) {
   // Extract the curren't package's package.json so that it can be included in
   // the returned config object.
   const { packageJson } = readPkgUp.sync() || {}
@@ -54,7 +54,7 @@ module.exports = function cli ({ name, description, usage, options }) {
   // flags.
   merge(config, cliOpts)
 
-  if (config.help) {
+  if (help || config.help) {
     config.help = `# ${name}\n`
 
     if (description) {
