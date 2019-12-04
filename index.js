@@ -69,10 +69,13 @@ module.exports = function cli ({ name, description, usage, options }) {
       config.help += '## Options\n'
       config.help += Object.entries(options).reduce((acc, [key, option]) => {
         const alias = option.alias ? `, --${option.alias}` : ''
+        const description = oneLine(option.description || '')
         const def = option.default !== undefined
-          ? ` (default: \`${util.inspect(option.default)}\`)`
+          ? oneLine`
+              ${description ? ' ' : ''}
+              (default: \`${util.inspect(option.default)}\`)
+            `
           : ''
-        const description = oneLine(option.description)
         return acc + `* \`--${key}${alias}\`  ${description}${def}\n`
       }, '')
     }
