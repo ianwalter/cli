@@ -27,7 +27,7 @@ config.packageJson = { name: config.packageJson && config.packageJson.name }
 if (module.parent) {
   module.exports = config
 } else if (config.help) {
-  print.text(config.help)
+  print.text(config.helpText)
 } else {
   print.text(config)
 }

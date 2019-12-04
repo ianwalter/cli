@@ -55,19 +55,19 @@ module.exports = function cli ({ name, description, usage, options, help }) {
   merge(config, cliOpts)
 
   if (help || config.help) {
-    config.help = `# ${name}\n`
+    config.helpText = `# ${name}\n`
 
     if (description) {
-      config.help += `${description}\n\n`
+      config.helpText += `${description}\n\n`
     }
 
     if (usage) {
-      config.help += `## Usage\n${usage}\n\n`
+      config.helpText += `## Usage\n${usage}\n\n`
     }
 
     if (options) {
-      config.help += '## Options\n'
-      config.help += Object.entries(options).reduce((acc, [key, option]) => {
+      config.helpText += '## Options\n'
+      config.helpText += Object.entries(options).reduce((acc, [key, option]) => {
         const alias = option.alias ? `, --${option.alias}` : ''
         const info = option.description ? oneLine(option.description) : ''
         const def = option.default !== undefined
@@ -78,7 +78,7 @@ module.exports = function cli ({ name, description, usage, options, help }) {
     }
 
     // Format the help markdown text with marked.
-    config.help = md(config.help) + '\n'
+    config.helpText = md(config.helpText) + '\n'
   }
 
   // Return the populated configuration object.
