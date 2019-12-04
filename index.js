@@ -67,14 +67,17 @@ module.exports = function cli ({ name, description, usage, options, help }) {
 
     if (options) {
       config.helpText += '## Options\n'
-      config.helpText += Object.entries(options).reduce((acc, [key, option]) => {
-        const alias = option.alias ? `, --${option.alias}` : ''
-        const info = option.description ? oneLine(option.description) : ''
-        const def = option.default !== undefined
-          ? `${info ? ' ' : ''}(default: \`${util.inspect(option.default)}\`)`
-          : ''
-        return acc + `* \`--${key}${alias}\`  ${info}${def}\n`
-      }, '')
+      config.helpText += Object.entries(options).reduce(
+        (acc, [key, option]) => {
+          const alias = option.alias ? `, --${option.alias}` : ''
+          const info = option.description ? oneLine(option.description) : ''
+          const def = option.default !== undefined
+            ? `${info ? ' ' : ''}(default: \`${util.inspect(option.default)}\`)`
+            : ''
+          return acc + `* \`--${key}${alias}\`  ${info}${def}\n`
+        },
+        ''
+      )
     }
 
     // Format the help markdown text with marked.
