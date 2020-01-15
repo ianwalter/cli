@@ -18,7 +18,7 @@ exports[`cli 1`] = `
     14   c: 4,
     15   path: '/some/path'
     16 }
-    "
+"
 `;
 
 exports[`dot format 1`] = `
@@ -39,5 +39,5 @@ exports[`dot format 1`] = `
     14   c: 2,
     15   path: '/some/path'
     16 }
-    "
+"
 `;
