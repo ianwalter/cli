@@ -38,7 +38,7 @@
     "common-tags": "^1.8.0",
     "dot-prop": "^5.2.0",
     "getopts": "^2.2.5",
-    "read-pkg-up": "^7.0.0"
+    "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
     "@ianwalter/bff": "^7.0.0",
