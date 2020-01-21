@@ -18,6 +18,11 @@ const config = cli({
     },
     path: {
       default: '/some/path'
+    },
+    debug: {
+      alias: 'd',
+      description: 'Print debug statements',
+      default: false
     }
   }
 })

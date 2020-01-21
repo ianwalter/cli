@@ -21,7 +21,7 @@ module.exports = function cli ({ name, description, usage, options, help }) {
   if (options) {
     for (let [key, option] of Object.entries(options)) {
       // Convert camelCased option names to kebab-case.
-      key = decamelize(key, '-')
+      option.flag = key = decamelize(key, '-')
 
       // Add option alias to getopts alias configuration.
       if (option.alias) {
@@ -32,11 +32,11 @@ module.exports = function cli ({ name, description, usage, options, help }) {
       opts.default[key] = dotProp.get(config, key) || option.default
 
       // Specify the option type.
-      const type = option.type || typeof opts.default[key]
-      if (opts[type]) {
-        opts[type].push(key)
-      } else if (['string', 'boolean'].includes(type)) {
-        opts[type] = [key]
+      option.type = option.type || typeof opts.default[key]
+      if (opts[option.type]) {
+        opts[option.type].push(key)
+      } else if (['string', 'boolean'].includes(option.type)) {
+        opts[option.type] = [key]
       }
     }
   }
@@ -48,14 +48,15 @@ module.exports = function cli ({ name, description, usage, options, help }) {
   cliOpts = Object.entries(cliOpts).reduce(
     (acc, [key, val]) => {
       // Convert keys back to camelCase.
-      const newKey = key.split('.').map(k => camelcase(k)).join('.')
+      const flag = key
+      key = key.split('.').map(k => camelcase(k)).join('.')
 
       if (key.includes('.')) {
         dotProp.set(acc, key, val)
         delete acc[key]
-      } else if (key !== newKey) {
-        acc[newKey] = val
-        delete acc[key]
+      } else if (flag !== key) {
+        acc[key] = val
+        delete acc[flag]
       }
       return acc
     },
@@ -81,12 +82,13 @@ module.exports = function cli ({ name, description, usage, options, help }) {
       config.helpText += '## Options\n'
       config.helpText += Object.entries(options).reduce(
         (acc, [key, option]) => {
-          const alias = option.alias ? `, --${option.alias}` : ''
+          const alias = option.alias ? `, -${option.alias}` : ''
           const info = option.description ? oneLine(option.description) : ''
           const def = option.default !== undefined
             ? `${info ? ' ' : ''}(default: \`${util.inspect(option.default)}\`)`
             : ''
-          return acc + `* \`--${key}${alias}\`  ${info}${def}\n`
+          acc += `* \`--${option.type === 'boolean' ? '(no-)' : ''}`
+          return acc + `${option.flag}${alias}\`  ${info}${def}\n`
         },
         ''
       )

@@ -16,8 +16,10 @@ exports[`cli 1`] = `
     12   },
     13   _: [],
     14   c: 4,
-    15   path: '/some/path'
-    16 }
+    15   path: '/some/path',
+    16   debug: false,
+    17   d: false
+    18 }
 "
 `;
 
@@ -37,7 +39,9 @@ exports[`dot format 1`] = `
     12   },
     13   _: [],
     14   c: 1,
-    15   path: '/some/path'
-    16 }
+    15   path: '/some/path',
+    16   debug: false,
+    17   d: false
+    18 }
 "
 `;
