@@ -5,6 +5,8 @@ const dotProp = require('dot-prop')
 const merge = require('@ianwalter/merge')
 const { oneLine } = require('common-tags')
 const { md } = require('@ianwalter/print')
+const decamelize = require('decamelize')
+const camelcase = require('camelcase')
 
 module.exports = function cli ({ name, description, usage, options, help }) {
   // Extract the curren't package's package.json so that it can be included in
@@ -17,7 +19,11 @@ module.exports = function cli ({ name, description, usage, options, help }) {
   // Convert cli config to getopts config.
   const opts = { alias: {}, default: {} }
   if (options) {
-    Object.entries(options).forEach(([key, option]) => {
+    for (let [key, option] of Object.entries(options)) {
+      // Convert camelCased option names to kebab-case.
+      key = decamelize(key, '-')
+
+      // Add option alias to getopts alias configuration.
       if (option.alias) {
         opts.alias[key] = option.alias
       }
@@ -32,7 +38,7 @@ module.exports = function cli ({ name, description, usage, options, help }) {
       } else if (['string', 'boolean'].includes(type)) {
         opts[type] = [key]
       }
-    })
+    }
   }
 
   // Collect any command-line arguments passed to the process.
@@ -41,8 +47,14 @@ module.exports = function cli ({ name, description, usage, options, help }) {
   // Reduce any command-line arguments containing dots into a nested structure.
   cliOpts = Object.entries(cliOpts).reduce(
     (acc, [key, val]) => {
+      // Convert keys back to camelCase.
+      const newKey = key.split('.').map(k => camelcase(k)).join('.')
+
       if (key.includes('.')) {
         dotProp.set(acc, key, val)
+        delete acc[key]
+      } else if (key !== newKey) {
+        acc[newKey] = val
         delete acc[key]
       }
       return acc

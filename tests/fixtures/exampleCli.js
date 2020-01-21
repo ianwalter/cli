@@ -8,7 +8,7 @@ const config = cli({
   description: 'Just an example CLI',
   usage: 'example [options]',
   options: {
-    concurrency: {
+    processorConcurrency: {
       alias: 'c',
       description: `
         The number of CPU cores to use when executing the application. The value

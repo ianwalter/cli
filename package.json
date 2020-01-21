@@ -35,7 +35,9 @@
   "dependencies": {
     "@ianwalter/merge": "^5.0.0",
     "@ianwalter/print": "^5.0.0",
+    "camelcase": "^5.3.1",
     "common-tags": "^1.8.0",
+    "decamelize": "^3.2.0",
     "dot-prop": "^5.2.0",
     "getopts": "^2.2.5",
     "read-pkg-up": "^7.0.1"
@@ -49,7 +51,7 @@
   },
   "exampleCli": {
     "level": "debug",
-    "concurrency": 2,
+    "processorConcurrency": 2,
     "some": {
       "thing": true,
       "other": {

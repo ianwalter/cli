@@ -7,7 +7,7 @@ exports[`cli 1`] = `
      3     name: '@ianwalter/cli'
      4   },
      5   level: 'debug',
-     6   concurrency: 4,
+     6   processorConcurrency: 4,
      7   some: {
      8     thing: true,
      9     other: {
@@ -28,7 +28,7 @@ exports[`dot format 1`] = `
      3     name: '@ianwalter/cli'
      4   },
      5   level: 'debug',
-     6   concurrency: 2,
+     6   processorConcurrency: 1,
      7   some: {
      8     thing: true,
      9     other: {
@@ -36,7 +36,7 @@ exports[`dot format 1`] = `
     11     }
     12   },
     13   _: [],
-    14   c: 2,
+    14   c: 1,
     15   path: '/some/path'
     16 }
 "
