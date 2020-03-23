@@ -19,8 +19,7 @@ exports[`cli 1`] = `
     15   path: '/some/path',
     16   debug: false,
     17   d: false
-    18 }
-"
+    18 }"
 `;
 
 exports[`dot format 1`] = `
@@ -42,6 +41,5 @@ exports[`dot format 1`] = `
     15   path: '/some/path',
     16   debug: false,
     17   d: false
-    18 }
-"
+    18 }"
 `;
