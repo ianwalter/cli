@@ -39,7 +39,7 @@
     "common-tags": "^1.8.0",
     "decamelize": "^4.0.0",
     "dot-prop": "^5.2.0",
-    "getopts": "^2.2.5",
+    "getopts": "^2.3.0",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
